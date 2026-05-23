@@ -61,10 +61,10 @@ jobs:
             | grep '^Version:' \
             | awk '{print $2}')
 
-          echo "Expected version: $VERSION"
+          echo "Expected version: $GITTAG_VERSION"
           echo "Wheel version:    $WHEEL_VERSION"
 
-          if [ "$VERSION" != "$WHEEL_VERSION" ]; then
+          if [ "$GITTAG_VERSION" != "$WHEEL_VERSION" ]; then
             echo "Wheel metadata version mismatch"
             exit 1
           fi
