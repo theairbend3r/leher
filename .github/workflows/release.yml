@@ -24,7 +24,7 @@ jobs:
       - name: Set release version
         run: |
           GITTAG_VERSION="${GITHUB_REF_NAME#v}"
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "GITTAG_VERSION=$GITTAG_VERSION" >> $GITHUB_ENV
 
       - name: Verify pyproject.toml version matches tag
         run: |
